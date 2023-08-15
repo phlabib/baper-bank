@@ -1,38 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bank Inside</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1 class="text-5xl text-center mt-6">Let's get some
-            <span class="font-semibold text-red-700">Money :) </span>
-        </h1>
+      <h1 class="text-5xl text-center mt-6">
+        Let's get some
+        <span class="font-semibold text-red-700">Money :) </span>
+      </h1>
     </header>
 
     <main>
-        <section class="mt-6">
-           <div class="grid grid-cols-3 gap-4 w-9/12 mx-auto">
-            <div class="bg-green-500 text-center p-8 rounded-xl text-white ">
-                <h2 class="text-3xl mb-2">Diposite</h2>
-                <h3 class="text-5xl">$00</h3>
-            </div>
-            <div class="bg-orange-500 text-center p-8 rounded-xl text-white ">
-                <h2 class="text-3xl mb-2">Withdraw</h2>
-                <h3 class="text-5xl">$00</h3>
-            </div>
-            <div class="bg-violet-500 text-center p-8 rounded-xl text-white ">
-                <h2 class="text-3xl mb-2">Balance</h2>
-                <h3 class="text-5xl">$1240</h3>
-            </div>
-           
-           </div>
-        </section>
+      <section class="mt-6">
+        <div class="grid grid-cols-3 gap-4 w-9/12 mx-auto">
+          <div class="bg-green-500 text-center p-8 rounded-xl text-white">
+            <h2 class="text-3xl mb-2">Diposite</h2>
+            <h3 class="text-5xl">$00</h3>
+          </div>
+          <div class="bg-orange-500 text-center p-8 rounded-xl text-white">
+            <h2 class="text-3xl mb-2">Withdraw</h2>
+            <h3 class="text-5xl">$00</h3>
+          </div>
+          <div class="bg-violet-500 text-center p-8 rounded-xl text-white">
+            <h2 class="text-3xl mb-2">Balance</h2>
+            <h3 class="text-5xl">$1240</h3>
+          </div>
+        </div>
+      </section>
+
+      <!-- Diposit and Withdraw -->
+      <section class="mt-12">
+        <div class="grid grid-cols-2 gap-4 w-9/12 mx-auto">
+          <div class="bg-pink-400 text-center p-8 rounded-xl text-white">
+            <h2 class="text-3xl mb-5">Please Diposite</h2>
+
+            <input
+              class="w-9/12 block mb-4 px-5"
+              type="email"
+              name=""
+              id="diposit-field"
+              placeholder=" $ Please Enter your Diposite Amount "
+            />
+
+            <button
+              id="btn-diposit"
+              class="block bg-orange-500 px-8 py-3 text-white font-medium rounded-xl hover:bg-sky-500"
+            >
+              Diposit
+            </button>
+          </div>
+          
+          <div class="bg-lime-400 text-center p-8 rounded-xl text-white">
+            <h2 class="text-3xl mb-5">Please Withdraw</h2>
+            <input
+            class="w-9/12 block mb-4 px-5"
+            type="email"
+            name=""
+            id="withdraw-field"
+            placeholder=" $ Please Enter your Withdraw Amount "
+          />
+
+          <button
+            id="btn-withdraw"
+            class="block bg-orange-500 px-8 py-3 text-white font-medium rounded-xl hover:bg-sky-500"
+          >
+            Withdraw
+          </button>
+          </div>
+        </div>
+      </section>
     </main>
-
-
-</body>
+  </body>
 </html>
