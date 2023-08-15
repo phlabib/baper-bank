@@ -3,10 +3,22 @@ document.getElementById('btn-diposit').addEventListener('click', function(){
     // get the diposite amount from the diposite input field
     // for input field use .value to the value inside the input field
     const dipositeField = document.getElementById('diposit-field');
-    const dipositeAmount = dipositeField.value;
+    const newDipositeAmountString = dipositeField.value;
+    const newDipositeAmount = parseFloat(newDipositeAmountString);
+    
     // step 3 : get the curretnt diposite total
     // for non inout (element other than input, testarea) use innerText to get the text
     const dipositTotalElement = document.getElementById('diposit-total');
-    const dipositTotal = dipositTotalElement.innerText;
-    dipositTotalElement.innerText = dipositeAmount;
+    const previuosDipositTotalString = dipositTotalElement.innerText;
+    const previuosDipositTotal = parseFloat(previuosDipositTotalString);
+    // stpe 4: add numbers to set the total diposite
+    const currentDipositeTotal = previuosDipositTotal + newDipositeAmount; 
+
+    dipositTotalElement.innerText = currentDipositeTotal;
+
+
+
+
+    // step 7: clear the diposite field
+    dipositeField.value = '';
 })
