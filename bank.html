@@ -19,7 +19,7 @@
         <div class="grid grid-cols-3 gap-4 w-9/12 mx-auto">
           <div class="bg-green-500 text-center p-8 rounded-xl text-white">
             <h2 class="text-3xl mb-2">Diposite</h2>
-            <h3 class="text-5xl">$00</h3>
+            <h3  class="text-5xl">$<span id="diposit-total">00</span></h3>
           </div>
           <div class="bg-orange-500 text-center p-8 rounded-xl text-white">
             <h2 class="text-3xl mb-2">Withdraw</h2>
@@ -35,12 +35,12 @@
       <!-- Diposit and Withdraw -->
       <section class="mt-12">
         <div class="grid grid-cols-2 gap-4 w-9/12 mx-auto">
-          <div class="bg-pink-400 text-center p-8 rounded-xl text-white">
-            <h2 class="text-3xl mb-5">Please Diposite</h2>
+          <div class="bg-pink-400 text-center p-8 rounded-xl ">
+            <h2 class="text-3xl mb-5 text-white">Please Diposite</h2>
 
             <input
               class="w-9/12 block mb-4 px-5"
-              type="email"
+              type="text"
               name=""
               id="diposit-field"
               placeholder=" $ Please Enter your Diposite Amount "
@@ -48,17 +48,16 @@
 
             <button
               id="btn-diposit"
-              class="block bg-orange-500 px-8 py-3 text-white font-medium rounded-xl hover:bg-sky-500"
-            >
+              class="block bg-orange-500 px-8 py-3 text-white font-medium rounded-xl hover:bg-sky-500">
               Diposit
             </button>
           </div>
           
-          <div class="bg-lime-400 text-center p-8 rounded-xl text-white">
-            <h2 class="text-3xl mb-5">Please Withdraw</h2>
+          <div class="bg-lime-400 text-center p-8 rounded-xl ">
+            <h2 class="text-3xl mb-5 text-white">Please Withdraw</h2>
             <input
             class="w-9/12 block mb-4 px-5"
-            type="email"
+            type="text"
             name=""
             id="withdraw-field"
             placeholder=" $ Please Enter your Withdraw Amount "
@@ -66,13 +65,13 @@
 
           <button
             id="btn-withdraw"
-            class="block bg-orange-500 px-8 py-3 text-white font-medium rounded-xl hover:bg-sky-500"
-          >
+            class="block bg-orange-500 px-8 py-3 text-white font-medium rounded-xl hover:bg-sky-500">
             Withdraw
           </button>
           </div>
         </div>
       </section>
     </main>
+    <script src="js/diposit.js"></script>
   </body>
 </html>
