@@ -13,8 +13,20 @@ document.getElementById('btn-diposit').addEventListener('click', function(){
     const previuosDipositTotal = parseFloat(previuosDipositTotalString);
     // stpe 4: add numbers to set the total diposite
     const currentDipositeTotal = previuosDipositTotal + newDipositeAmount; 
-
+    //  set the diposite total 
     dipositTotalElement.innerText = currentDipositeTotal;
+
+    // step 5 : get ballance current total
+    const balanceTotalElement = document.getElementById('total-balance');
+    const previousBalanceTotalStirng = balanceTotalElement.innerText;
+    const previousBalanceTotal = parseFloat(previousBalanceTotalStirng);
+
+    // step 6 : calculate current total balance
+    const currtentBalanceTotal = previousBalanceTotal + newDipositeAmount;
+    // set the balance total 
+    balanceTotalElement.innerText = currtentBalanceTotal;
+
+
 
 
 
