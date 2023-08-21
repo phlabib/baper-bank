@@ -3,8 +3,10 @@
 
     // step 2 :get the diposite amount from the diposite input field
     // for input field use .value to the value inside the input field
+  
     const dipositeField = document.getElementById('diposit-field');
     const newDipositeAmountString = dipositeField.value;
+      // convart strint diposite amount to a number
     const newDipositeAmount = parseFloat(newDipositeAmountString);
     
     // step 3 : get the curretnt diposite total

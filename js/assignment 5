@@ -1,0 +1,78 @@
+let selectedItems = [];
+let totalPrice = 0;
+let discount = 0;
+
+// Function to handle card clicks and calculate total price
+function calculateAccessories(card) {
+  const cardTitle = card.querySelector(".card-title").textContent;
+  const cardPrice = parseFloat(card.querySelector(".card-body p").textContent);
+
+  const selectedItemsContainer = document.getElementById("selected-items");
+  const selectedCardNumber = document.createElement("p");
+  selectedCardNumber.textContent = ${card.getAttribute("data-card-number")} . ${cardTitle};
+  selectedItemsContainer.appendChild(selectedCardNumber);
+
+  selectedItems.push(cardTitle); // Add the selected item to the list
+  totalPrice += cardPrice; // Update total price
+
+  const totalPriceElement = document.getElementById("total-price");
+  totalPriceElement.textContent = totalPrice.toFixed(2);
+
+  const applyButton = document.querySelector('#apply-btn');
+  applyButton.disabled = totalPrice < 200;
+  const  makeModalButton = document.querySelector('#my_modal_5');
+  makeModalButton= ' ';
+  
+}
+
+// Function to apply discount
+function applyDiscount() {
+  const discountAmount = totalPrice * 0.2; // 20% discount
+  discount = discountAmount; // Update the discount value
+
+  const discountElement = document.getElementById("discount");
+  discountElement.textContent = discountAmount.toFixed(2);
+
+  const discountedTotal = totalPrice - discount;
+  const discountedTotalElement = document.getElementById("discounted-total");
+  discountedTotalElement.textContent = discountedTotal.toFixed(2);
+}
+
+// Add event listeners to card buttons
+const cardButtons = document.querySelectorAll(".card");
+cardButtons.forEach((card, index) => {
+  card.setAttribute("data-card-number", index + 1);
+  card.addEventListener("click", () => {
+    calculateAccessories(card);
+  });
+});
+
+// Add event listener to apply button
+const applyButton = document.querySelector('#apply-btn');
+applyButton.addEventListener("click", () => {
+  applyDiscount();
+});
+
+
+
+// Add event listener to purchase button
+const modal = document.querySelector('#my_modal_5');
+makeModalButton.addEventListener("click", () => {
+  modal.close();
+  selectedItems = [];
+  totalPrice = 0;
+  discount = 0;
+
+  const selectedItemsContainer = document.getElementById("selected-items");
+  selectedItemsContainer.innerHTML = "";
+
+  const totalPriceElement = document.getElementById("total-price");
+  totalPriceElement.textContent = "0.00";
+
+  const discountElement = document.getElementById("discount");
+  discountElement.textContent = "0.00";
+
+  const discountedTotalElement = document.getElementById("discounted-total");
+  discountedTotalElement.textContent = "0.00";
+  modal.close();
+});
